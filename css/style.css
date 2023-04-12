@@ -263,6 +263,13 @@ ol {
 	}
 }
 
+.header-with-hero-container{
+	background-image: url("../img/hero.png");
+	width: 100vw;
+	height: 100vh;
+	background-size: cover;
+}
+
 /*---------------------
   Header
 -----------------------*/
@@ -271,6 +278,7 @@ ol {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	background: #f6f6f6;
 }
 
 .header-section.header-normal {
@@ -392,10 +400,14 @@ ol {
 
 .hero-section {
 	padding-top: 55px;
+	/* background-image: url("../img/hero.jpg");
+	background-repeat: no-repeat;
+	background-size: cover; */
 }
 
 .hero-section .hero-text {
-	padding-top: 184px;
+	padding-top: 84px;
+	padding-bottom: 124px;
 }
 
 .hero-section .hero-text span {
@@ -407,7 +419,7 @@ ol {
 
 .hero-section .hero-text h2 {
 	font-size: 60px;
-	color: #ffffff;
+	color: #000;
 	line-height: 72px;
 	font-weight: 600;
 	margin-top: 24px;
