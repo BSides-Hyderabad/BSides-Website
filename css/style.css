@@ -265,7 +265,7 @@ ol {
 
 .header-with-hero-container{
 	background-image: url("../img/hero.png");
-	width: 100vw;
+	width: 99vw;
 	height: 100vh;
 	background-size: cover;
 }
@@ -410,20 +410,21 @@ ol {
 	padding-bottom: 124px;
 }
 
-.hero-section .hero-text span {
+.hero-section .hero-text div {
 	font-size: 16px;
 	color: #f44949;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	margin-bottom: 30px;
 }
 
 .hero-section .hero-text h2 {
-	font-size: 60px;
+	font-size: 40px;
 	color: #000;
 	line-height: 72px;
 	font-weight: 600;
 	margin-top: 24px;
-	margin-bottom: 35px;
+	margin-bottom: 15px;
 }
 
 /*---------------------
@@ -502,11 +503,25 @@ ol {
 	-webkit-box-shadow: 0px 0px 30px rgba(11, 12, 48, 0.15);
 	box-shadow: 0px 0px 30px rgba(11, 12, 48, 0.15);
 	margin-right: 30px;
+	position: relative;
 }
 
 .ha-pic img {
 	min-width: 100%;
 	border-radius: 2px;
+	height: 630px;
+}
+
+.image-shadow {
+	position: absolute;
+	min-width: 101%;
+	min-height: 101%;
+	background: linear-gradient(120deg, #ee8425 0%, #f9488b 100%), linear-gradient(120deg, #ee8425 0%, #f9488b 100%);;
+	top: 0;
+	transform: translate(10px, 10px);
+	-webkit-transform: translate(10px, 10px);
+	-moz-transform: translate(10px, 10px);
+	z-index: -1;
 }
 
 .ha-text {
