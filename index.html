@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>BSides Hyderabad | Security Conference 2024</title>
-    <link rel="icon" type="image/ico" sizes="32x32" href="./img/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png" />
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
     <link
@@ -18,41 +18,47 @@
   </head>
 
   <body>
+    <!-- Landing Section Begin -->
     <div class="header-with-hero-container">
-      <!-- Header Section Begin -->
+      <!-- Start Header section -->
       <header class="header-section">
-        <div class="container">
+        <div class="container-fluid">
           <div class="logo">
             <a href="./index.html">
-              <img src="img/BSidesHydLogo.png" alt="" width="132" height="56" />
+              <img src="img/BSidesHydLogo.png" alt="" width="170" height="56" />
             </a>
+          </div>
+          <div class="nav-menu">
+            <nav class="mainmenu mobile-menu">
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#event-details">Event Details</a></li>
+                <li><a href="#">Meetup</a></li>
+                <li><a href="#">CTF</a></li>
+                <li><a href="#">CFP</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
       </header>
-      <!-- Header End -->
+      <!-- End Header section -->
 
       <!-- Hero Section Begin -->
-      <section class="hero-section">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-5 col-md-8">
-              <div class="hero-text text-center">
-                <span class="edition-label">First Edition</span>
-                <h1>BSides Hyderabad 2024</h1>
-                <div>
-                  <i class="fa fa-map"></i> 6 to 7 june 2024, ITC Kohenur,
-                  Hyderabad
-                </div>
-              </div>
-            </div>
+      <section class="hero-section" id="landing-page">
+        <div class="hero-text text-center">
+          <span class="edition-label">First Edition</span>
+          <h1>BSides Hyderabad 2024</h1>
+          <div>
+            <i class="fa fa-map"></i> &nbsp; Stay tuned for the venue (TBD)
           </div>
         </div>
       </section>
-      <!-- Hero Section End -->
     </div>
+    <!-- Landing Section End -->
 
     <!-- Event Details Section Begin -->
-    <section class="event-details-section">
+    <section class="event-details-section" id="event-details">
       <div class="container event-details-section-container">
         <div class="row">
           <div class="col-md-12">
@@ -62,13 +68,13 @@
                 <div class="col-md-4">
                   <h3>When</h3>
                   <div class="text-center event-details-content">
-                    6 to 7 June 2024
+                    TBD (To Be Decided)
                   </div>
                 </div>
                 <div class="col-md-4">
                   <h3>Where</h3>
                   <div class="text-center event-details-content">
-                    ITC Kohenur, Hyderabad
+                    TBD (To Be Decided)
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -78,6 +84,7 @@
                       <li>CTF (Capture the Flag)</li>
                       <li>Paper Presentation</li>
                       <li>Security Workshops</li>
+                      <li>Security Training</li>
                     </ul>
                   </div>
                 </div>
@@ -90,7 +97,7 @@
                       href="https://www.linkedin.com/company/security-bsides-hyderabad/"
                       target="_blank"
                     >
-                      <i class="fa-brands fa-linkedin fa-lg"></i>
+                      <i class="fa-brands fa-linkedin fa-xl"></i>
                     </a>
                   </li>
                   <li>
@@ -98,7 +105,7 @@
                       href="https://www.linkedin.com/company/capturesecure"
                       target="_blank"
                     >
-                      <i class="fa-brands fa-square-x-twitter fa-lg"></i>
+                      <i class="fa-brands fa-square-x-twitter fa-xl"></i>
                     </a>
                   </li>
                   <li>
@@ -106,12 +113,17 @@
                       href="https://www.youtube.com/channel/UCq5C4dKQ2aasgGcs23n44Tg"
                       target="_blank"
                     >
-                      <i class="fa-brands fa-square-youtube fa-lg"></i>
+                      <i class="fa-brands fa-square-youtube fa-xl"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa-brands fa-square-instagram fa-xl"></i>
                     </a>
                   </li>
                   <li>
                     <a href="mailto:contact@capturesecure.com">
-                      <i class="fa-solid fa-envelope fa-lg"></i>
+                      <i class="fa-solid fa-envelope fa-xl"></i>
                     </a>
                   </li>
                 </ul>
@@ -124,7 +136,7 @@
     <!-- Event Details Section End -->
 
     <!-- Contact Form Section Begin -->
-    <section class="contact-form-section">
+    <section class="contact-form-section" id="contact">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
@@ -167,7 +179,7 @@
                       />
                     </div>
                     <div class="col-6">
-                      <label for="phone">Phone</label>
+                      <label for="phone">Phone (Optional)</label>
                       <input
                         type="text"
                         name="phone"
@@ -186,10 +198,10 @@
                         <option value="" selected="">Select</option>
                         <option value="Sponsorship">Sponsorship</option>
                         <option value="Attending as Participant">
-                          Attending as Participant
+                          Participant
                         </option>
                         <option value="Volunteering opportunities">
-                          Volunteering opportunities
+                          Volunteering
                         </option>
                         <option value="Others">Others</option>
                       </select>
@@ -247,7 +259,7 @@
     <section class="map-section">
       <h3 class="map-loading-label">loading...</h3>
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.5725697414287!2d78.38290661487699!3d17.432288488051686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9388a09a79f5%3A0x9ff99841b5ec9e9c!2sITC%20Kohenur%2C%20a%20Luxury%20Collection%20Hotel%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1681182908386!5m2!1sen!2sin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.34203427588!2d78.24323333886348!3d17.412281016402705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1699411230425!5m2!1sen!2sin"
         height="500"
         style="border: 0"
         allowfullscreen=""
@@ -280,9 +292,7 @@
       </div>
     </footer>
     <!-- Footer Section End -->
-
-    <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/main.js"></script>
   </body>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/main.js"></script>
 </html>

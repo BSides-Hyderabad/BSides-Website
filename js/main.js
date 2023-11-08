@@ -6,10 +6,8 @@ $(document).ready(function () {
   contactForm.click(function (event) {
     event.preventDefault();
     var nameInput = $("#name");
-    var phoneInput = $("#phone");
     var emailInput = $("#email");
     var isNameValid = false;
-    var isPhoneValid = false;
     var isEmailValid = false;
     var formData = document.getElementById("contact-form");
     if ((nameInput.val() || "").length <= 0) {
@@ -17,17 +15,6 @@ $(document).ready(function () {
     } else {
       isNameValid = true;
       nameInput.attr("class", "form-input");
-    }
-
-    if ((phoneInput.val() || "") <= 0) {
-      phoneInput.attr("class", "form-input invalid-input");
-    } else {
-      if (/^(\+91[\-\s]?)?(?:\d{10})$/.test(phoneInput.val())) {
-        isPhoneValid = true;
-        phoneInput.attr("class", "form-input");
-      } else {
-        phoneInput.attr("class", "form-input invalid-input");
-      }
     }
 
     if ((emailInput.val() || "") <= 0) {
@@ -45,7 +32,7 @@ $(document).ready(function () {
       }
     }
 
-    if (isNameValid && isPhoneValid && isEmailValid) {
+    if (isNameValid && isEmailValid) {
       $("#form-spinner").show();
       contactForm.attr("disabled", true);
 
