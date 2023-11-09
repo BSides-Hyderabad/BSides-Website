@@ -7,8 +7,10 @@ $(document).ready(function () {
     event.preventDefault();
     var nameInput = $("#name");
     var emailInput = $("#email");
+    var interestedInput = $("#interested");
     var isNameValid = false;
     var isEmailValid = false;
+    var interestedValid = false;
     var formData = document.getElementById("contact-form");
     if ((nameInput.val() || "").length <= 0) {
       nameInput.attr("class", "form-input invalid-input");
@@ -30,6 +32,13 @@ $(document).ready(function () {
       } else {
         emailInput.attr("class", "form-input invalid-input");
       }
+    }
+
+    if ((interestedInput.val() || "").length <= 0) {
+      interestedInput.attr("class", "form-input invalid-input");
+    } else {
+      interestedValid = true;
+      interestedInput.attr("class", "form-input");
     }
 
     if (isNameValid && isEmailValid) {
