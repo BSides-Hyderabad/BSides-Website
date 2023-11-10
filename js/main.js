@@ -1,129 +1,110 @@
-/*  ---------------------------------------------------
-    Template Name: Manup
-    Description: Manup Event HTML Template
-    Author: Colorlib
-    Author URI: http://colorlib.com
-    Version: 1.0
-    Created: Colorlib
----------------------------------------------------------  */
+$(document).ready(function () {
+  // Copyright Text
+  $("#copyright-year").text(new Date().getFullYear());
 
-"use strict";
+  var contactForm = $("#submit-now");
+  contactForm.click(function (event) {
+    event.preventDefault();
+    var nameInput = $("#name");
+    var emailInput = $("#email");
+    var interestedInput = $("#interested");
+    var isNameValid = false;
+    var isEmailValid = false;
+    var interestedValid = false;
+    var formData = document.getElementById("contact-form");
+    if ((nameInput.val() || "").length <= 0) {
+      nameInput.attr("class", "form-input invalid-input");
+    } else {
+      isNameValid = true;
+      nameInput.attr("class", "form-input");
+    }
 
-(function ($) {
-  /*------------------
-        Preloader
-    --------------------*/
-  $(window).on("load", function () {
-    $(".loader").fadeOut();
-    $("#preloder").delay(200).fadeOut("slow");
+    if ((emailInput.val() || "") <= 0) {
+      emailInput.attr("class", "form-input invalid-input");
+    } else {
+      if (
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+          emailInput.val()
+        )
+      ) {
+        isEmailValid = true;
+        emailInput.attr("class", "form-input");
+      } else {
+        emailInput.attr("class", "form-input invalid-input");
+      }
+    }
+
+    if ((interestedInput.val() || "").length <= 0) {
+      interestedInput.attr("class", "form-input invalid-input");
+    } else {
+      interestedValid = true;
+      interestedInput.attr("class", "form-input");
+    }
+
+    if (isNameValid && isEmailValid) {
+      $("#form-spinner").show();
+      contactForm.attr("disabled", true);
+
+      $.ajax({
+        type: formData.method,
+        url: formData.action,
+        data: JSON.stringify({
+          name: $("#name").val(),
+          phone: $("#phone").val(),
+          email: $("#email").val(),
+          interested: $("#interested").val(),
+          message: $("#messages").val(),
+        }), // now data come in this function
+        contentType: "application/json; charset=utf-8",
+        crossDomain: true,
+        dataType: "json",
+        success: function (data, status, jqXHR) {
+          $("#form-spinner").hide();
+          $("#my-form-status").html(
+            `<div class="success-animation">
+                  <svg
+                    class="checkmark"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 52 52"
+                  >
+                    <circle
+                      class="checkmark__circle"
+                      cx="26"
+                      cy="26"
+                      r="25"
+                      fill="none"
+                    />
+                    <path
+                      class="checkmark__check"
+                      fill="none"
+                      d="M14.1 27.2l7.1 7.2 16.7-16.8"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  Thank you for your submission 🙌. Our team will
+                  be in touch with you soon.
+                </div>`
+          );
+          setTimeout(() => {
+            $("#my-form-status").html("");
+          }, 5000);
+          $("#name").val("");
+          $("#phone").val("");
+          $("#email").val("");
+          $("#interested").val("");
+          $("#messages").val("");
+        },
+        error: function (jqXHR, status) {
+          $("#form-spinner").hide();
+          // error handler
+          console.log(jqXHR);
+          alert("fail" + status.code);
+        },
+        complete: function () {
+          contactForm.removeAttr("disabled");
+        },
+      });
+    }
   });
-
-  /*------------------
-        Background Set
-    --------------------*/
-  $(".set-bg").each(function () {
-    var bg = $(this).data("setbg");
-    $(this).css("background-image", "url(" + bg + ")");
-  });
-
-  /*------------------
-		Navigation
-	--------------------*/
-  $(".mobile-menu").slicknav({
-    prependTo: "#mobile-menu-wrap",
-    allowParentLinks: true,
-  });
-
-  /*------------------------
-		Partner Slider
-    ----------------------- */
-  $(".partner-logo").owlCarousel({
-    items: 6,
-    dots: false,
-    autoplay: true,
-    loop: true,
-    smartSpeed: 1200,
-    margin: 116,
-    responsive: {
-      320: {
-        items: 2,
-      },
-      480: {
-        items: 3,
-      },
-      768: {
-        items: 4,
-      },
-      992: {
-        items: 5,
-      },
-      1200: {
-        items: 6,
-      },
-    },
-  });
-
-  /*------------------------
-		Testimonial Slider
-    ----------------------- */
-  $(".testimonial-slider").owlCarousel({
-    items: 2,
-    dots: false,
-    autoplay: false,
-    loop: true,
-    smartSpeed: 1200,
-    nav: true,
-    navText: [
-      "<span class='fa fa-angle-left'></span>",
-      "<span class='fa fa-angle-right'></span>",
-    ],
-    responsive: {
-      320: {
-        items: 1,
-      },
-      768: {
-        items: 2,
-      },
-    },
-  });
-
-  /*------------------
-        Magnific Popup
-    --------------------*/
-  $(".video-popup").magnificPopup({
-    type: "iframe",
-  });
-
-  /*------------------
-        CountDown
-    --------------------*/
-  //   // For demo preview
-  //   var today = new Date();
-  //   var dd = String(today.getDate()).padStart(2, "0");
-  //   var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-  //   var yyyy = today.getFullYear();
-
-  //   if (mm == 12) {
-  //     mm = "01";
-  //     yyyy = yyyy + 1;
-  //   } else {
-  //     mm = parseInt(mm) + 1;
-  //     mm = String(mm).padStart(2, "0");
-  //   }
-  //   var timerdate = mm + "/" + dd + "/" + yyyy;
-  // For demo preview end
-
-  // Use this for real timer date
-  var timerdate = "2023/06/06";
-
-  $("#countdown").countdown(timerdate, function (event) {
-    $(this).html(
-      event.strftime(
-        "<div class='cd-item'><span>%D</span> <p>Days</p> </div>" +
-          "<div class='cd-item'><span>%H</span> <p>Hrs</p> </div>" +
-          "<div class='cd-item'><span>%M</span> <p>Mins</p> </div>" +
-          "<div class='cd-item'><span>%S</span> <p>Secs</p> </div>"
-      )
-    );
-  });
-})(jQuery);
+});

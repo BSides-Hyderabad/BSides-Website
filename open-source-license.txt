@@ -1,0 +1,13 @@
+Library
+
+    1. Bootstrap (https://getbootstrap.com/)
+    2. JQuery (https://jquery.com/)
+    3. FontAwesome through CDN (https://fontawesome.com/)
+    3. Roboto font through CDN (https://fonts.google.com/specimen/Roboto)
+
+Images
+
+    1. Charminar from Unsplash by John Davidson (https://unsplash.com/photos/a-large-white-building-with-towers-with-charminar-in-the-background-lCdayu-e9rY)
+    2. Contact form Background Image From freepik (https://www.freepik.com/free-vector/geometric-background-concept_8398866.htm)
+    2. Map section Background Image From freepik (https://www.freepik.com/free-vector/abstract-geometric-figure-decorative-banner-with-modern-composition_50663233.htm)
+    2. Event Details Background Image From freepik (https://www.freepik.com/free-vector/abstract-memphis-background-with-modern-waves_15706399.htm)
