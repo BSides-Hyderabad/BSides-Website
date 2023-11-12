@@ -1,0 +1,15 @@
+.map-section {
+	background: url('../img/map-bg.jpg');
+	background-size: contain;
+	position: relative;
+
+    .map-loading-label {
+        width: 100%;
+        height: inherit;
+        position: absolute;
+        color: #000;
+        top: 0;
+        text-align: center;
+        z-index: -1;
+    }
+}

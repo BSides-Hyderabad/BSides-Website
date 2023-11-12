@@ -1,0 +1,25 @@
+{
+  "name": "capture-secure-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build-css": "node-sass -w scss/ -o dist/css/ --recursive",
+    "concat-css": "concat ./dist/css/* -o ./assets/css/merged.css",
+    "minify-css": "cleancss -o ./assets/css/merged.min.css ./assets/css/merged.css",
+    "css-converter": "npm run build-css && npm run concat-css && npm run minify-css"
+  },
+  "author": "Sourav",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "concat-cli": "^4.0.0",
+    "node-sass": "^9.0.0",
+    "rollup": "^3.29.4",
+    "rollup-plugin-scss": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}

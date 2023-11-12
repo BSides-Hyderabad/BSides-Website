@@ -1,0 +1,119 @@
+.event-details-section {
+	background: url('../img/event-details.jpg');
+	background-size: contain;
+	padding: 3% 0;
+
+    @media screen and (max-width: 991px) {
+        padding: 2% 0;
+    }
+
+    .event-details-section-card {
+        background: #fff;
+        border-radius: 5px;
+        margin: 2% 0;
+        position: relative;
+        padding-bottom: 3%;
+
+        @media screen and (max-width: 991px) {
+            padding: 1% 0;
+        }
+
+        &::before,
+        &::after {
+            margin-bottom: -10px;
+        }
+
+        .event-details-section-title {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 3% 0;
+            position: relative;
+            margin-bottom: 3%;
+
+            @media screen and (max-width: 991px) {
+                font-size: 40px;
+            }
+
+            @media screen and (max-width: 767px) {
+                font-size: 30px;
+            }
+        }
+
+        h3 {
+            text-align: center;
+
+            @media screen and (max-width: 991px) {
+                font-size: 23px;
+            }
+        }
+
+        .event-details-content {
+            margin: 5% 0;
+
+            ul {
+                width: 70%;
+                margin: 0 auto;
+                list-style: none;
+
+                li {
+                    margin-bottom: 8px;
+
+                    &::before{
+                        content: ".";
+                        width: 20px;
+                        height: 20px;
+                        background: #673ab7;
+                        position: relative;
+                        margin-right: 5px;
+                        color: #673ab7;
+                    }
+                }
+            }
+        }
+
+        .social-media-container {
+            h3 {
+                padding: 5px;
+                border-bottom: 3px solid rebeccapurple;
+                width: 50%;
+                margin: 0 auto;
+            }
+
+            .social-media-list {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                margin: 1em;
+
+                li {
+                    margin: 5px;
+                }
+                
+            }
+        }
+    }
+
+    
+.event-details-section-card h1::before {
+	content: "";
+	position: absolute;
+	left: 25%;
+	bottom: 16px;
+	width: 20%;
+	height: 7px;
+	transform: skew(-12deg) translateX(-50%);
+	background: rgba(238,111,87,0.5);
+}
+
+.event-details-section-card h1::after {
+	content: "";
+	position: absolute;
+	right: 4%;
+	bottom: 16px;
+	width: 20%;
+	height: 7px;
+	transform: skew(-12deg) translateX(-50%);
+	background: rgba(238,111,87,0.5);
+}
+
+}

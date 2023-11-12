@@ -1,0 +1,120 @@
+.contact-form-section {
+	padding: 100px 0;
+	background: url('../img/contact-form-bg.jpg');
+	background-size: contain;
+
+    .contact-form-bg {
+        @media screen and (max-width: 991px) {
+		    display: none;
+        }
+	}
+
+    .contact-form-card {
+        background: #fff;
+        position: absolute;
+        top: 30px;
+        left: -50px;
+        padding: 30px;
+        width: 100%;
+        border-radius: 5px;
+
+        @media screen and (max-width: 991px) {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .contact-form-card-inner {
+            border: 1px solid #000;
+            padding: 20px;
+            border-radius: 5px;
+
+            h4 {
+                text-transform: uppercase;
+                padding: 10px 5px;
+                margin-bottom: 20px;
+                position: relative;
+                margin: 10px auto;
+                display: flex;
+                align-items: center;
+                column-gap: 1rem;
+                max-width: 25rem;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 400;
+
+                &::before,
+                &::after {
+                    flex: 1;
+                    content: "";
+                    height: .2rem;
+                    border-block: .15rem solid #8e9193;
+                }
+            }
+
+        }
+
+        .form-input, textarea {
+            width: 100%;
+            padding: 5px 10px;
+            margin: 0 0 15px 0;
+        }
+        
+        .interested-input {
+            height: 37px;
+        }
+        
+        .contact-mail {
+            margin: 10px;
+        }
+        
+        .consent-notice {
+            margin-bottom: 20px;
+        }
+    }
+
+    .invalid-input {
+        border: 2px solid red !important;
+      }
+    
+      #my-form-status {
+        margin: 20px 0 0 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .checkmark {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: block;
+        stroke-width: 2;
+        stroke: #4bb71b;
+        stroke-miterlimit: 10;
+        box-shadow: inset 0px 0px 0px #4bb71b;
+        animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+        position:relative;
+        top: 1px;
+        right: 10px;
+        margin: 0 auto;
+    }
+    
+    .checkmark__circle {
+        stroke-dasharray: 166;
+        stroke-dashoffset: 166;
+        stroke-width: 2;
+        stroke-miterlimit: 10;
+        stroke: #4bb71b;
+        fill: #fff;
+        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+    }
+    
+    .checkmark__check {
+        transform-origin: 50% 50%;
+        stroke-dasharray: 48;
+        stroke-dashoffset: 48;
+        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+    }    
+}
