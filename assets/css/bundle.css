@@ -71,8 +71,8 @@ ol {
 .navbar {
   padding: 0.4rem 3rem;
   background: #544a7d;
-  background: -webkit-linear-gradient(to right, #ffd452, #544a7d);
-  background: linear-gradient(to right, #ffd452, #544a7d); }
+  background: -webkit-linear-gradient(to right, #c0c0c0, #544a7d);
+  background: linear-gradient(to right, #c0c0c0, #544a7d); }
   .navbar .nav-link {
     color: #fff;
     font-size: 18px;
@@ -180,40 +180,54 @@ ol {
       margin-bottom: 20px; }
   .contact-form-section .invalid-input {
     border: 2px solid red !important; }
-  .contact-form-section #my-form-status {
-    margin: 20px 0 0 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; }
-  .contact-form-section .checkmark {
+
+#my-form-status {
+  margin: 20px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%; }
+  #my-form-status .success-animation svg {
     width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: block;
-    stroke-width: 2;
-    stroke: #4bb71b;
-    stroke-miterlimit: 10;
-    box-shadow: inset 0px 0px 0px #4bb71b;
-    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-    position: relative;
-    top: 1px;
-    right: 10px;
-    margin: 0 auto; }
-  .contact-form-section .checkmark__circle {
-    stroke-dasharray: 166;
-    stroke-dashoffset: 166;
-    stroke-width: 2;
-    stroke-miterlimit: 10;
-    stroke: #4bb71b;
-    fill: #fff;
-    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards; }
-  .contact-form-section .checkmark__check {
-    transform-origin: 50% 50%;
-    stroke-dasharray: 48;
-    stroke-dashoffset: 48;
-    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards; }
+    height: 24px; }
+  #my-form-status .success-animation .path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0; }
+  #my-form-status .success-animation .path.circle {
+    -webkit-animation: dash 0.9s ease-in-out;
+    animation: dash 0.9s ease-in-out; }
+  #my-form-status .success-animation .path.line {
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+    animation: dash 0.9s 0.35s ease-in-out forwards; }
+  #my-form-status .success-animation .path.check {
+    stroke-dashoffset: -100;
+    -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+    animation: dash-check 0.9s 0.35s ease-in-out forwards; }
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100; }
+  100% {
+    stroke-dashoffset: 900; } }
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100; }
+  100% {
+    stroke-dashoffset: 900; } }
 
 .map-section {
   background: url("../img/map-bg.jpg");
